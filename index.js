@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = 2020;
+const port = process.env.PORT || 2020;
 const mongoose = require("mongoose");
 
 app.use(express.json());
@@ -17,6 +17,6 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.listen(PORT, () => {
-  console.log("Server is listening on port", PORT);
+app.listen(port, () => {
+  console.log("Server is listening on port", port);
 });
